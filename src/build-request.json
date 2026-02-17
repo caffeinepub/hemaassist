@@ -1,0 +1,175 @@
+{
+  "kind": "build_request",
+  "title": "HemaAssist – Slick FBC Auto-Comment Web App",
+  "projectName": "HemaAssist",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page app UI for entering patient details (Patient Name, Patient ID) and Full Blood Count (FBC) values (Hb, RBC, WBC, Platelets, MCV, MCHC, Neutrophils, Lymphocytes, Monocytes, Eosinophils, Basophils).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "I need a smart ui app which will help me with outputting FBC results. I've written the python code but I want to make the app slicker."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The UI contains input controls for Patient Name and Patient ID.",
+        "The UI contains input controls for each FBC field listed in the provided Python code.",
+        "The layout is responsive and usable on typical laptop screens without horizontal scrolling."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement the FBC auto-comment generation logic in the frontend to match the provided Python rules and thresholds, producing an English text report that includes patient details and the generated interpretive comments.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "def generate_report():",
+          "hb_f = flag(data[\"Hb\"], 12, 17)",
+          "mcv_f = flag(data[\"MCV\"], 80, 100)",
+          "mchc_f = flag(data[\"MCHC\"], 29, 37)",
+          "if data[\"WBC\"] < 4: wbc_comment = \"Leukopenia\"",
+          "elif data[\"WBC\"] > 12: wbc_comment = \"Leukocytosis\"",
+          "if data[\"Neutrophils\"] > 75: diff_comments.append(\"Neutrophilia\")",
+          "elif data[\"Neutrophils\"] < 40: diff_comments.append(\"Neutropenia\")",
+          "if data[\"Lymphocytes\"] > 45: diff_comments.append(\"Lymphocytosis\")",
+          "elif data[\"Lymphocytes\"] < 20: diff_comments.append(\"Lymphopenia\")",
+          "if data[\"Platelets\"] < 150: plt_comment = \"Thrombocytopenia\"",
+          "elif data[\"Platelets\"] > 450: plt_comment = \"Thrombocytosis\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "Given numeric inputs, the generated report includes a header line containing Patient Name and Patient ID in the format \"PATIENT: <name>  |  ID: <id>\".",
+        "Red cell comments match the Python logic: anaemia based on Hb (Low => \"Anaemia present\" else \"No anaemia\"), size based on MCV (Low => \"Microcytic\", High => \"Macrocytic\", else \"Normocytic\"), chroma based on MCHC (Low => \"Hypochromic\", High => \"Hyperchromic\", else \"Normochromic\").",
+        "White cell comments match the Python logic: WBC < 4 => \"Leukopenia\", WBC > 12 => \"Leukocytosis\", otherwise \"Normal total WBC count\"; differential adds Neutrophilia/Neutropenia and/or Lymphocytosis/Lymphopenia, or \"Normal WBC differential\" if none triggered.",
+        "Platelet comment matches the Python logic: Platelets < 150 => \"Thrombocytopenia\", Platelets > 450 => \"Thrombocytosis\", else \"Normal platelet count\".",
+        "All user-facing report text is in English."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add robust input validation and user feedback: ensure all FBC numeric fields are required and numeric; show a clear error message when validation fails and do not generate a report.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "messagebox.showerror(\"Input Error\", \"All fields must contain numeric values.\")"
+        ]
+      },
+      "acceptanceCriteria": [
+        "If any FBC field is empty or non-numeric, the app shows an error message in English indicating that all fields must contain numeric values.",
+        "When validation fails, the previously generated report (if any) is not overwritten by a new report.",
+        "Validation behavior is consistent across all FBC numeric fields."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Provide a slick output panel that displays the generated report text, and include the medical disclaimer in the UI: \"For laboratory assistance only. Final interpretation must be done by a qualified practitioner.\"",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "output = tk.Text(root, height=14, font=(\"Consolas\", 10), bg=\"white\")",
+          "⚠ For laboratory assistance only. Final interpretation must be done by a qualified practitioner."
+        ]
+      },
+      "acceptanceCriteria": [
+        "After generating, the report is shown in a dedicated output area that supports selecting and copying text.",
+        "The disclaimer text appears on-screen and is readable without scrolling on typical laptop screens.",
+        "All user-facing disclaimer text is in English and matches the provided wording (excluding the emoji if desired)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add primary user actions to improve usability: \"Generate FBC Comment\" button, plus convenient secondary actions such as \"Clear\" (reset all inputs/output) and \"Copy to Clipboard\" for the generated report.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "ttk.Button(root, text=\"Generate FBC Comment\", command=generate_report)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A button labeled \"Generate FBC Comment\" triggers validation and report generation.",
+        "A \"Clear\" action resets patient fields, all numeric inputs, and the output panel.",
+        "A \"Copy to Clipboard\" action copies exactly the report text currently displayed, and provides an on-screen confirmation in English."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Apply a coherent, modern visual theme (colors, typography, spacing, and component styling) suitable for a clinical/laboratory assistant tool, and enforce it consistently across the app.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "I want to make the app slicker."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The UI uses a consistent visual system (typography scale, spacing, and component variants) across header, forms, buttons, and output panel.",
+        "The design avoids a default/unstyled appearance; the app looks intentionally designed and professional.",
+        "The theme does not rely on blue/purple as the primary palette."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Generate and include required static image assets for branding (logo/app mark) and render them in the UI (served from frontend/public/assets/generated), without routing images through the backend.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "HemaAssist – Full Blood Count Auto Comment"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The generated image assets exist under frontend/public/assets/generated and are referenced directly by the frontend.",
+        "A logo/app mark is visible in the UI (e.g., in the header) and looks crisp on standard and high-DPI displays."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for any user-facing text.",
+    "Do not edit files in frontend immutablePaths; compose existing UI components instead.",
+    "Do not use blue & purple as the primary theme colors."
+  ],
+  "nonGoals": [
+    "Do not implement or depend on the provided Python/Tkinter runtime; port the logic to this web app.",
+    "Do not add third-party authentication beyond Internet Identity (not required for this request).",
+    "Do not add external databases or third-party APIs.",
+    "Do not provide clinical decision-making beyond the specified rule-based comments; no AI/LLM interpretation."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Minimal hematology-themed app logo mark with a droplet + subtle blood cell motif, clean vector style, dark-on-light (hemaassist-logo.dim_512x512.png)",
+      "Wide header banner illustration with abstract blood cells in a soft neutral palette (no blue/purple dominance), minimal clinical aesthetic (hemaassist-banner.dim_1600x400.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

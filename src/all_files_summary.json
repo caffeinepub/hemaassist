@@ -1,0 +1,17 @@
+{
+  "backend/main.mo": "Minimal Motoko canister actor with no defined methods.",
+  "feature_evidence.json": "Feature evidence report mapping features to source files and components with confidence metadata.",
+  "frontend-file-summaries.txt": "Plain-text summaries describing the purpose of each frontend file in the project.",
+  "frontend/index.css": "Tailwind CSS base layer defining OKLCH theme tokens and global styling for light and dark modes.",
+  "frontend/index.html": "Root HTML template mounting the React app and loading main.tsx.",
+  "frontend/src/App.tsx": "Main React component implementing the FBC input UI, validation, report generation, and user actions with toast feedback.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and manages an authenticated or anonymous backend actor using Internet Identity and React Query.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context and hooks for managing Internet Identity authentication, login state, and identity persistence.",
+  "frontend/src/index.css": "Tailwind CSS file defining a clinical teal theme and global styles for both light and dark modes.",
+  "frontend/src/lib/fbcReport.ts": "Implements FBC report generation, including numeric parsing, flagging ranges, interpreting RBC/WBC/platelet results, and outputting a formatted text report.",
+  "frontend/src/lib/fbcValidation.ts": "Validates FBC input fields by ensuring all required numeric values are present and parsable.",
+  "frontend/src/lib/utils.ts": "Provides a utility function to merge Tailwind and class names using clsx and twMerge.",
+  "frontend/src/main.tsx": "Bootstraps the React app with Internet Identity and React Query providers and renders the root component.",
+  "frontend/tailwind.config.js": "Configures Tailwind theme extensions, color tokens, plugins, and container settings for the frontend UI.",
+  "project_state.json": "Describes the project state, requirements, architecture, planned features, and image assets for the HemaAssist application."
+}

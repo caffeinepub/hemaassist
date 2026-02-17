@@ -1,0 +1,53 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-17T17:56:38.974Z",
+  "summary": "Diff adds a React SPA with FBC inputs, frontend-side report generation/validation utilities, Tailwind theme styling, and also introduces Internet Identity/react-query actor scaffolding plus an empty backend actor. The required generated static image assets (logo and banner) are referenced but not present in the diff summary.",
+  "missing_requirements": [
+    {
+      "id": "REQ-7",
+      "requirement": "Generate and include required static image assets (logo mark and wide header banner) under frontend/public/assets/generated and reference them directly in the UI.",
+      "reason": "The UI references the logo path, but the diff summary does not include any added files under frontend/public/assets/generated (and no image assets at all), and there is no evidence of the required banner asset or its rendering in the UI.",
+      "evidence": [
+        "frontend/src/App.tsx (references /assets/generated/hemaassist-logo.dim_512x512.png)",
+        "File diff summary: ADDED FILES list contains no frontend/public/assets/generated/* and no .png assets"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication scaffolding (provider/hook) and actor creation logic using react-query.",
+      "reason": "BuildRequest explicitly states third-party authentication beyond Internet Identity is a non-goal, and also says Internet Identity is not required for this request. The diff adds Internet Identity integration and actor wiring even though no requirement asked for auth.",
+      "evidence": [
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/main.tsx (wraps app with InternetIdentityProvider and QueryClientProvider)"
+      ]
+    },
+    {
+      "description": "Backend canister actor stub added (empty Motoko actor).",
+      "reason": "All listed requirements are frontend-only and do not require backend changes; additionally, images must be served from frontend/public without routing through backend. The diff adds a backend/main.mo actor stub with no requested functionality.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/fbcReport.ts",
+    "frontend/src/lib/fbcValidation.ts",
+    "frontend/src/lib/utils.ts",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

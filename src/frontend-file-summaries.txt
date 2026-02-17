@@ -1,0 +1,16 @@
+{
+  "frontend/src/App.tsx": "Main application component containing the complete HemaAssist FBC auto-comment interface with patient details form, FBC results input grid, report generation, validation, and action buttons (Generate, Clear, Copy).",
+  "frontend/src/lib/fbcReport.ts": "Pure utility function that implements the FBC interpretation logic matching the Python rules, generating English text reports with red cell, white cell, and platelet comments based on reference ranges.",
+  "frontend/src/lib/fbcValidation.ts": "Validation utility that ensures all FBC numeric fields contain valid numeric values and returns appropriate error messages.",
+  "frontend/src/lib/utils.ts": "Shared utility functions including the cn() helper for merging Tailwind CSS class names using clsx and tailwind-merge.",
+  "frontend/src/components/ui/button.tsx": "Shadcn/ui Button component with variants (default, destructive, outline, secondary, ghost, link) and sizes (sm, default, lg, icon).",
+  "frontend/src/components/ui/input.tsx": "Shadcn/ui Input component for form text and numeric inputs with consistent styling and focus states.",
+  "frontend/src/components/ui/label.tsx": "Shadcn/ui Label component for accessible form field labels using Radix UI primitives.",
+  "frontend/src/components/ui/card.tsx": "Shadcn/ui Card component with subcomponents (CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction) for structured content sections.",
+  "frontend/src/components/ui/textarea.tsx": "Shadcn/ui Textarea component for multiline text input and display with consistent styling.",
+  "frontend/src/components/ui/alert.tsx": "Shadcn/ui Alert component with variants (default, destructive) for displaying validation errors and informational messages.",
+  "frontend/src/components/ui/sonner.tsx": "Shadcn/ui Toaster wrapper for the Sonner toast notification library with theme support.",
+  "frontend/src/main.tsx": "Application entry point that sets up React Query, Internet Identity, and ThemeProvider context wrappers around the App component.",
+  "frontend/src/index.css": "Global styles with OKLCH-based clinical teal color system for light and dark modes, avoiding blue/purple primary colors.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with clinical teal color tokens, Inter/JetBrains Mono fonts, and custom design system values."
+}

@@ -1,0 +1,136 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-app-ui-for-entering-patient-details-patient-name-patient-id-and-full-blood-count-fbc-values-hb-rbc-wbc-platelets-mcv-mchc-neutrophils-lymphocytes-monocytes-eosinophils-basophils",
+      "featureTitle": "Create a single-page app UI for entering patient details (Patient Name, Patient ID) and Full Blood Count (FBC) values (Hb, RBC, WBC, Platelets, MCV, MCHC, Neutrophils, Lymphocytes, Monocytes, Eosinophils, Basophils).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/main.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-fbc-auto-comment-generation-logic-in-the-frontend-to-match-the-provided-python-rules-and-thresholds-producing-an-english-text-report-that-includes-patient-details-and-the-generated-interpretive-comments",
+      "featureTitle": "Implement the FBC auto-comment generation logic in the frontend to match the provided Python rules and thresholds, producing an English text report that includes patient details and the generated interpretive comments.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/lib/fbcReport.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-robust-input-validation-and-user-feedback-ensure-all-fbc-numeric-fields-are-required-and-numeric-show-a-clear-error-message-when-validation-fails-and-do-not-generate-a-report",
+      "featureTitle": "Add robust input validation and user feedback: ensure all FBC numeric fields are required and numeric; show a clear error message when validation fails and do not generate a report.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/lib/fbcValidation.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-provide-a-slick-output-panel-that-displays-the-generated-report-text-and-include-the-medical-disclaimer-in-the-ui-for-laboratory-assistance-only-final-interpretation-must-be-done-by-a-qualified-practitioner",
+      "featureTitle": "Provide a slick output panel that displays the generated report text, and include the medical disclaimer in the UI: \"For laboratory assistance only. Final interpretation must be done by a qualified practitioner.\"",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-primary-user-actions-to-improve-usability-generate-fbc-comment-button-plus-convenient-secondary-actions-such-as-clear-reset-all-inputs-output-and-copy-to-clipboard-for-the-generated-report",
+      "featureTitle": "Add primary user actions to improve usability: \"Generate FBC Comment\" button, plus convenient secondary actions such as \"Clear\" (reset all inputs/output) and \"Copy to Clipboard\" for the generated report.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-modern-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-clinical-laboratory-assistant-tool-and-enforce-it-consistently-across-the-app",
+      "featureTitle": "Apply a coherent, modern visual theme (colors, typography, spacing, and component styling) suitable for a clinical/laboratory assistant tool, and enforce it consistently across the app.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/lib/utils.ts",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-include-required-static-image-assets-for-branding-logo-app-mark-and-render-them-in-the-ui-served-from-frontend-public-assets-generated-without-routing-images-through-the-backend",
+      "featureTitle": "Generate and include required static image assets for branding (logo/app mark) and render them in the UI (served from frontend/public/assets/generated), without routing images through the backend.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

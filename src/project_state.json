@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a slick Python desktop UI app (HemaAssist) to input Full Blood Count (FBC) values and generate automated interpretive comments/reports, including patient details and safety disclaimer.",
+  "architectural_notes": [
+    "Python Tkinter/ttk desktop GUI application.",
+    "UI includes patient details inputs, FBC numeric input grid, a 'Generate' action, and a text output panel."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Minimal hematology-themed app logo mark with a droplet + subtle blood cell motif, clean vector style, dark-on-light (hemaassist-logo.dim_512x512.png)\n- Wide header banner illustration with abstract blood cells in a soft neutral palette (no blue/purple dominance), minimal clinical aesthetic (hemaassist-banner.dim_1600x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-app-ui-for-entering-patient-details-patient-name-patient-id-and-full-blood-count-fbc-values-hb-rbc-wbc-platelets-mcv-mchc-neutrophils-lymphocytes-monocytes-eosinophils-basophils",
+      "title": "Create a single-page app UI for entering patient details (Patient Name, Patient ID) and Full Blood Count (FBC) values (Hb, RBC, WBC, Platelets, MCV, MCHC, Neutrophils, Lymphocytes, Monocytes, Eosinophils, Basophils).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-fbc-auto-comment-generation-logic-in-the-frontend-to-match-the-provided-python-rules-and-thresholds-producing-an-english-text-report-that-includes-patient-details-and-the-generated-interpretive-comments",
+      "title": "Implement the FBC auto-comment generation logic in the frontend to match the provided Python rules and thresholds, producing an English text report that includes patient details and the generated interpretive comments.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-robust-input-validation-and-user-feedback-ensure-all-fbc-numeric-fields-are-required-and-numeric-show-a-clear-error-message-when-validation-fails-and-do-not-generate-a-report",
+      "title": "Add robust input validation and user feedback: ensure all FBC numeric fields are required and numeric; show a clear error message when validation fails and do not generate a report.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-a-slick-output-panel-that-displays-the-generated-report-text-and-include-the-medical-disclaimer-in-the-ui-for-laboratory-assistance-only-final-interpretation-must-be-done-by-a-qualified-practitioner",
+      "title": "Provide a slick output panel that displays the generated report text, and include the medical disclaimer in the UI: \"For laboratory assistance only. Final interpretation must be done by a qualified practitioner.\"",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-primary-user-actions-to-improve-usability-generate-fbc-comment-button-plus-convenient-secondary-actions-such-as-clear-reset-all-inputs-output-and-copy-to-clipboard-for-the-generated-report",
+      "title": "Add primary user actions to improve usability: \"Generate FBC Comment\" button, plus convenient secondary actions such as \"Clear\" (reset all inputs/output) and \"Copy to Clipboard\" for the generated report.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-modern-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-clinical-laboratory-assistant-tool-and-enforce-it-consistently-across-the-app",
+      "title": "Apply a coherent, modern visual theme (colors, typography, spacing, and component styling) suitable for a clinical/laboratory assistant tool, and enforce it consistently across the app.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-include-required-static-image-assets-for-branding-logo-app-mark-and-render-them-in-the-ui-served-from-frontend-public-assets-generated-without-routing-images-through-the-backend",
+      "title": "Generate and include required static image assets for branding (logo/app mark) and render them in the UI (served from frontend/public/assets/generated), without routing images through the backend.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a smart/slick desktop UI (Tkinter) for entering FBC results and patient details and generating an auto-comment report output",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement FBC interpretation logic (flags/thresholds for Hb, MCV, MCHC; WBC total and differential; platelet count) to produce human-readable comments",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add input validation and user feedback (numeric-only field validation with error dialog)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Provide an output panel to display the generated report text and include a medical/lab-assistance disclaimer in the UI",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "HemaAssist",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
